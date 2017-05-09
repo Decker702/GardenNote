@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using GardenNote.Web.Models;
+using GardenNote.Data.Models;
 
 namespace GardenNote.Web.Controllers
 {

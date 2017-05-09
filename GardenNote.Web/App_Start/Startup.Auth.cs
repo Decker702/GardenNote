@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using GardenNote.Web.Models;
+using GardenNote.Data.Models;
 
 namespace GardenNote.Web
 {
