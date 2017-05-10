@@ -18,9 +18,16 @@ namespace GardenNote.Models
 
         //This is optional, User may not have change idea to include
         public string Content1 { get; set; }
+     
+ /*
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+ */
 
-        public override string ToString() => Title;
-        
+      public override string ToString() => Title;
+       
 
     }
 }

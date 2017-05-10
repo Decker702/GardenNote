@@ -53,11 +53,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GardenNote.Data\GardenNote.Data.csproj">
+      <Project>{6cbcda51-fabc-45e2-b0e6-af90b13cb363}</Project>
+      <Name>GardenNote.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GardenNote.Models\GardenNote.Models.csproj">
+      <Project>{fd8cf0cf-e3c4-4e44-b738-9b8e7fd6c94e}</Project>
+      <Name>GardenNote.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
