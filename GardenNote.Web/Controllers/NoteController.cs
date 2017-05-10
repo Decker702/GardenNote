@@ -23,28 +23,45 @@ namespace GardenNote.Web.Controllers
 
             return View(model);
         }
-        
+
         public ActionResult Create()
         {
             return View();
-        
+
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(NoteCreate model)
         {
 
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-                var userId = Guid.Parse(User.Identity.GetUserId());
-                        var service = new NoteService(userId);
-                        service.CreateNote(model);
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateNoteService();
 
-                        return RedirectToAction("Index");
+            if (service.CreateNote(model))
+            {
+                //Use TempData to store data in the session.  When you read data from there, it removes it from the session.
+
+                TempData["SaveResult"] = "Your note was created.";
+                  return RedirectToAction("Index");
+            };
+
+            
+            //Overload with two strings.  Custom message.
+            ModelState.AddModelError("", "Note could not be created.");
+
+            //If it fails, we go back to the model
+            return View(model);
 
         }
 
+        private NoteService CreateNoteService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new NoteService(userId);
+            return service;
+        }
     }
 }
+
