@@ -59,5 +59,28 @@ namespace GardenNote.Services
             }
         }
 
+        public NoteDetail GetNoteById(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Notes
+                    .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+                return
+                    new NoteDetail
+                    {
+                        NoteId = entity.NoteId,
+                        Title = entity.Title,
+                        Content = entity.Content,
+                        Content1 = entity.Content,
+                        CreatedUtc = entity.CreateUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+
+            }
+
+        }
+
     }
 }

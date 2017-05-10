@@ -53,7 +53,14 @@ namespace GardenNote.Web.Controllers
 
             //If it fails, we go back to the model
             return View(model);
+        }
 
+        public ActionResult Details(int id)
+        {
+            var service = CreateNoteService();
+            var model = service.GetNoteById(id);
+
+            return View(model);
         }
 
         private NoteService CreateNoteService()
