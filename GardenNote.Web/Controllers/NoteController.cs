@@ -63,7 +63,57 @@ namespace GardenNote.Web.Controllers
             return View(model);
         }
 
-        private NoteService CreateNoteService()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, NoteEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.NoteId != id)
+            {
+                ModelState.AddModelError("", "Id is a Mismatch");
+                return View(model);
+            }
+
+  
+            var service = CreateNoteService();
+
+            if (service.UpdateNote(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your note was not updated.");
+            return View(model);
+        }
+
+
+            /*
+                  if(model.NoteId != id)
+                  {
+                      ModelState.AddModelError("", "Id is a Mismatch");
+                      return View(model);
+                  }
+
+
+
+                             var detail = service.GetNoteById(id);
+                             var model =
+                                 new NoteEdit
+                                 {
+                                     NoteId = detail.NoteId,
+                                     Title = detail.Title,
+                                     Content = detail.Content,
+                                     Content1 = detail.Content1
+                                 };
+
+
+                  return View();
+              }
+              */
+
+            private NoteService CreateNoteService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new NoteService(userId);
