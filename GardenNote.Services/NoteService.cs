@@ -73,7 +73,7 @@ namespace GardenNote.Services
                         NoteId = entity.NoteId,
                         Title = entity.Title,
                         Content = entity.Content,
-                        Content1 = entity.Content,
+                        Content1 = entity.Content1,
                         CreatedUtc = entity.CreateUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -95,6 +95,22 @@ namespace GardenNote.Services
                 entity.Content = model.Content;
                 entity.Content1 = model.Content1;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+
+        }
+
+        public bool DeleteNote(int noteId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Notes
+                    .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+
+                ctx.Notes.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
