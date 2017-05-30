@@ -51,7 +51,7 @@ namespace GardenNote.Services
                         {
                             NoteId = e.NoteId,
                             Title = e.Title,
-                            CreatedUTC = e.CreateUtc
+                            CreatedUtc = e.CreateUtc
                         }
                      );
                 return query.ToArray();

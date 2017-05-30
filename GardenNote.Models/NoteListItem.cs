@@ -15,7 +15,7 @@ namespace GardenNote.Models
         public string Title { get; set; }
 
         [Display(Name="Created")]
-        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
 
         public override string ToString() => Title;
        
