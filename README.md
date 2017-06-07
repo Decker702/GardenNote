@@ -4,7 +4,9 @@ This is a note app, which allows the user to:
   identify the current situation; and 
   then make a note for changes in the future.
 
-## Register to use it;
+## Register to use it
+
+
 
 
 
