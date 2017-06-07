@@ -9,14 +9,13 @@ This is a note app, which allows the user to:
 ![Register](/ScreenShots/GardenNote/GardenNoteRegister.PNG)
 
 
-## Create a Note
+## Create oe Edit a Note
 
 ![Create](/ScreenShots/GardenNote/GardenNoteCreate.PNG)
 
 
-## Track your plant(s) or garden area currently; and make notes for the future.
+## Track your notes
 
-![notes](/ScreenShots/GardenNoteSnippet.PNG)
 
 ![Index](/ScreenShots/GardenNote/GardenNoteIndex.PNG)
 
