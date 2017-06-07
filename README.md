@@ -9,7 +9,7 @@ This is a note app, which allows the user to:
 ![Register](/ScreenShots/GardenNote/GardenNoteRegister.PNG)
 
 
-## Create oe Edit a Note
+## Create or Edit a Note
 
 ![Create](/ScreenShots/GardenNote/GardenNoteCreate.PNG)
 
