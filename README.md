@@ -11,7 +11,7 @@ This is a note app, which allows the user to:
 
 ## Track your plant(s) or garden area currently; and make notes for the future.
 
-![notes](/screenshots/GardenNoteSnippet.PNG)
+![notes](/ScreenShots/GardenNoteSnippet.PNG)
 
 
 
